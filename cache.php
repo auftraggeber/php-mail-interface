@@ -25,7 +25,7 @@ final class BodyCache {
                 continue;
             }
 
-            $path = self::CACHE_DIR . "/" . $dir;
+            $path = self::CACHE_DIR . DIRECTORY_SEPARATOR . $dir;
 
             if (is_dir($path)) {
                 $time_diff = time() - filemtime($path);
