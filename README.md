@@ -6,8 +6,8 @@ SMTP only (for now).
 
 ## available post params (call mail.php to send)
 
-- *file_path_{0...i}*       Path of attachment {0...i} (has to be on the same server)
-- *file_name_{0...i}*       Name of attachment {0...i}
+- *file_path_{0...i}*|Path of attachment {0...i} (has to be on the same server)
+- *file_name_{0...i}*|Name of attachment {0...i}
 - *smtp_host*
 - *smtp_port*       (int)
 - *smtp_username*
