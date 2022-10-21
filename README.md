@@ -6,10 +6,10 @@ SMTP only (for now).
 
 ## available post params (call mail.php to send)
 
-|param|type|description|
+|param|type (default: string)|description|
 |--|--|--|
-|*file_path_{0...i}*|       ||
-|*file_name_{0...i}*|       |Name of attachment {0...i}                                 |
+|*file_path_{0...i}*|       |Path of attachment {0..i} _has to be on the same server_|
+|*file_name_{0...i}*|       |Name of attachment {0..i}                                 |
 |*smtp_host*        |       |                                                           |
 |*smtp_port*        |(int)  |                                                           |
 |*smtp_username*    |       |                                                           |
