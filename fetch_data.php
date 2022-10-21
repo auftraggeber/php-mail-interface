@@ -155,17 +155,17 @@ final class MailConfiguration {
         }
         if ($this->to !== null) {
             foreach ($this->to as $to) {
-                $phpMailer->addAddress($to->address, $to->name);
+                $phpMailer->addAddress($to);
             }
         }
         if ($this->cc !== null) {
             foreach ($this->cc as $cc) {
-                $phpMailer->addCC($cc->address, $cc->name);
+                $phpMailer->addCC($cc);
             }
         }
         if ($this->bcc !== null) {
             foreach ($this->bcc as $bcc) {
-                $phpMailer->addBCC($bcc->address, $bcc->name);
+                $phpMailer->addBCC($bcc);
             }
         }
         if ($this->subject !== null) {
