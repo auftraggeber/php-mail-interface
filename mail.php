@@ -2,12 +2,15 @@
 use PHPMailer\PHPMailer\PHPMailer;
 
 session_start();
+
 ini_set('display_errors', 0);
 
 require_once 'fetch_data.php';
 require_once 'phpmailer/PHPMailer.php';
+require_once 'phpmailer/Exception.php';
 
 File::fetchFiles();
+
 
 try {
     $mail = new PHPMailer(true);
