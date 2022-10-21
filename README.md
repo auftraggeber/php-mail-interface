@@ -25,3 +25,11 @@ SMTP only (for now).
 |*body*             |       |                                                           |
 |*body_is_html*     |(bool **post as int 0/1**) |                                                           |
 |*charset*          |       |                                                           |
+
+## body cache (call cache_body.php)
+
+- used to post body in chunks
+- param body contains the content
+- param chunk is the chunk-identifier
+- param cache_id is the cache-identifier. this var will be created after the first chunk was stored. this will be part of the response. you will have to pass this param with furter chunks
+- to load a cached body into the mail you have to pass the cache_id when sending. the cache will be overwritten if you pass the "body" param
