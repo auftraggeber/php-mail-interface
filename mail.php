@@ -14,6 +14,11 @@ File::fetchFiles();
 
 try {
     $mail = new PHPMailer(true);
+    
+    if (isset($_POST['debug'])) {
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    }
+        
     SMTPConfiguration::shared()->apply($mail);
     MailConfiguration::shared()->apply($mail);
     
