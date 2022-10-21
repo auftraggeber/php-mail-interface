@@ -104,30 +104,6 @@ final class SMTPConfiguration {
             $phpMailer->SMTPAuth = $this->auth;
         }
     }
-
-    public function getHost(): ?string {
-        return $this->host;
-    }
-
-    public function getPort(): ?int {
-        return $this->port;
-    }
-
-    public function getUsername(): ?string {
-        return $this->username;
-    }
-
-    public function getPassword(): ?string {
-        return $this->password;
-    }
-
-    public function getEncryption(): ?string {
-        return $this->encryption;
-    }
-
-    public function getAuth(): ?bool {
-        return $this->auth;
-    }
 }
 
 final class MailConfiguration {
@@ -204,42 +180,6 @@ final class MailConfiguration {
         if ($this->charset !== null) {
             $phpMailer->CharSet = $this->charset;
         }
-    }
-
-    public function getFrom(): ?string {
-        return $this->from;
-    }
-
-    public function getFromName(): ?string {
-        return $this->from_name;
-    }
-
-    public function getTo(): ?array {
-        return $this->to;
-    }
-
-    public function getCc(): ?array {
-        return $this->cc;
-    }
-
-    public function getBcc(): ?array {
-        return $this->bcc;
-    }
-
-    public function getSubject(): ?string {
-        return $this->subject;
-    }
-
-    public function getBody(): ?string {
-        return $this->body;
-    }
-
-    public function getBodyIsHtml(): ?bool {
-        return $this->body_is_html;
-    }
-
-    public function getCharset(): ?string {
-        return $this->charset;
     }
 }
 
