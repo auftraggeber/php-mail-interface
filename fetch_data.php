@@ -1,5 +1,7 @@
 <?php
 
+require_once "cache.php";
+
 use PHPMailer\PHPMailer\PHPMailer;
 
 final class File {
@@ -147,6 +149,11 @@ final class MailConfiguration {
         $this->body = $_POST[self::POST_BODY_PARAM] ?? null;
         $this->body_is_html = isset($_POST[self::POST_BODY_IS_HTML_PARAM]) ? $_POST[self::POST_BODY_IS_HTML_PARAM] == 1 : null;
         $this->charset = $_POST[self::POST_CHARSET_PARAM] ?? null;
+
+        if ($this->body === null) {
+            $this->body = BodyCache::shared()->getBody();
+            BodyCache::shared()->delete();
+        }
     }
 
     public function apply(PHPMailer $phpMailer) {

@@ -8,13 +8,14 @@ require_once 'fetch_data.php';
 require_once 'phpmailer/PHPMailer.php';
 require_once 'phpmailer/Exception.php';
 require_once 'phpmailer/SMTP.php';
+require_once 'cache.php';
 
+BodyCache::deleteOldCaches();
 File::fetchFiles();
-
 
 try {
     $mail = new PHPMailer(true);
-    
+
     if (isset($_POST['debug'])) {
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     }
