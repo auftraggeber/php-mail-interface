@@ -15,7 +15,7 @@ SMTP only (for now).
 |*smtp_username*    |       |                                                           |
 |*smtp_password*    |       |                                                           |
 |*smtp_encryption*  |       |                                                           |
-|*smtp_auth*        |(bool) |                                                           |
+|*smtp_auth*        |(bool **post as int 0/1)** |                                                           |
 |*from*             |       |Displayed mail address of sender                           |
 |*from_name*        |       |Displayed name of sender                                   |
 |*to*               |(json) |Array of all receivers                                     |
@@ -23,5 +23,5 @@ SMTP only (for now).
 |*bcc*              |(json) |...                                                        |
 |*subject*          |       |                                                           |
 |*body*             |       |                                                           |
-|*body_is_html*     |(bool) |                                                           |
+|*body_is_html*     |(bool **post as int 0/1**) |                                                           |
 |*charset*          |       |                                                           |
