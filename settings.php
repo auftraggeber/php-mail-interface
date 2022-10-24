@@ -2,7 +2,13 @@
 
 final class DefaultSettings {
 
-    public const DEFAULT_VALUES = []; // default values for post parameters - if a parameter is not set, the default value will be used
+    /**
+     * default values for post parameters - if a parameter is not set, the default value will be used
+     * @param array $post the post parameters with their default values
+     */
+    protected static function getDefaultValues(): array {
+        return [];
+    }
 
     public static function applyOn(?array $arr = null): array {
         if ($arr === null) {
