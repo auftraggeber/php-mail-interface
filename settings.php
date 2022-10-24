@@ -15,7 +15,7 @@ final class DefaultSettings {
             $arr = $_POST;
         }
 
-        foreach (self::DEFAULT_VALUES as $key => $value) {
+        foreach (self::getDefaultValues() as $key => $value) {
             if (!isset($arr[$key])) {
                 $arr[$key] = $value;
             }
