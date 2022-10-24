@@ -9,6 +9,9 @@ require_once 'phpmailer/PHPMailer.php';
 require_once 'phpmailer/Exception.php';
 require_once 'phpmailer/SMTP.php';
 require_once 'cache.php';
+require_once 'settings.php';
+
+$_POST = DefaultSettings::applyOn($_POST);
 
 BodyCache::deleteOldCaches();
 File::fetchFiles();
