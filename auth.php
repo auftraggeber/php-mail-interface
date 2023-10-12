@@ -1,6 +1,6 @@
 <?php
 /**
- * The AuthManager holds the allowed Auth-Keys.
+ * The AuthManager verifies the Auth-Keys.
  * There is only one active manager.
  * @author Jonas Langner
  * @version 0.1.1
