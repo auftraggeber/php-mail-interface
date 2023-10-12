@@ -64,17 +64,14 @@ final class JSONAuthManager extends IAuthManager {
 /**
  * Checks for authentication.
  * If request is not authorized, the site will shutdown (404).
- * Looking for Bearer-Token.
  */
-function auth_this_http_request(): void {
+function auth_this_http_request(string $auth_header_key='Authorization'): void {
     $headers = getallheaders();
 
     if (is_array($headers)) {
-        $auth_key = isset($headers['Authorization']) ? $headers['Authorization'] : null;
+        $auth_key = isset($headers[$auth_header_key]) ? $headers[$auth_header_key] : null;
 
         if ($auth_key !== null) {
-            $auth_key_subs = explode(" ", $auth_key);
-            $auth_key = $auth_key_subs[count($auth_key_subs) - 1];
 
             if (in_array($auth_key, IAuthManager::shared()->getAuthKeys())){
                 return;
