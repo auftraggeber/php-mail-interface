@@ -1,13 +1,13 @@
 <?php
 /**
- * The AuthManager holds the allowed Auth-Keys.
+ * The AuthManager verifies the Auth-Keys.
  * There is only one active manager.
  * @author Jonas Langner
  * @version 0.1.1
  * @since 12.10.2023
  */
 abstract class IAuthManager {
-    public static ?IAuthManager $shared = null;
+    private static ?IAuthManager $shared = null;
 
     public static function setAuthManager(IAuthManager $m): void {
         self::$shared = $m;
@@ -17,7 +17,7 @@ abstract class IAuthManager {
         return self::$shared ?? new NullAuthManager();
     }
 
-    public abstract function getAuthKeys(): array;
+    public abstract function validAuthKey(string $key): bool;
 }
 
 /**
@@ -27,9 +27,9 @@ abstract class IAuthManager {
  * @since 12.10.2023
  */
 final class NullAuthManager extends IAuthManager {
-    public function getAuthKeys(): array
+    public function validAuthKey(string $key): bool
     {
-        return [];
+        return false;
     }
 }
 
@@ -55,9 +55,9 @@ final class JSONAuthManager extends IAuthManager {
         }
     }
 
-    public function getAuthKeys(): array
+    public function validAuthKey(string $key): bool
     {
-        return $this->auth_keys;
+        return in_array($key, $this->auth_keys);
     }
 }
 
@@ -73,7 +73,7 @@ function auth_this_http_request(string $auth_header_key='Authorization'): void {
 
         if ($auth_key !== null) {
 
-            if (in_array($auth_key, IAuthManager::shared()->getAuthKeys())){
+            if (IAuthManager::shared()->validAuthKey($auth_key)){
                 return;
             }
         }
