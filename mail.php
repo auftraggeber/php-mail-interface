@@ -5,7 +5,6 @@ use PHPMailer\PHPMailer\SMTP;
 ini_set('display_errors', 0);
 
 require_once 'auth.php';
-auth_this_http_request();
 
 if (!file_exists("setup") || !is_dir("setup")) {
     mkdir("setup");
@@ -19,6 +18,8 @@ if (file_exists("setup") && is_dir("setup")) {
         }
     }
 }
+
+auth_this_http_request();
 
 require_once 'fetch_data.php';
 require_once 'phpmailer/PHPMailer.php';
