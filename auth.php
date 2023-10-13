@@ -64,6 +64,7 @@ final class JSONAuthManager extends IAuthManager {
 /**
  * Checks for authentication.
  * If request is not authorized, the site will shutdown (404).
+ * @param string $auth_header_key The header that provides the auth key.
  */
 function auth_this_http_request(string $auth_header_key='Authorization'): void {
     $headers = getallheaders();
