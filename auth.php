@@ -17,6 +17,16 @@ abstract class IAuthManager {
         return self::$shared ?? new NullAuthManager();
     }
 
+    private string $auth_header = 'Authorization';
+
+    public function setAuthHeader(string $header): void {
+        $this->auth_header = $header;
+    }
+
+    public function getAuthHeader(): string {
+        return $this->auth_header;
+    }
+
     public abstract function validAuthKey(string $key): bool;
 }
 
@@ -64,10 +74,11 @@ final class JSONAuthManager extends IAuthManager {
 /**
  * Checks for authentication.
  * If request is not authorized, the site will shutdown (404).
- * @param string $auth_header_key The header that provides the auth key.
  */
-function auth_this_http_request(string $auth_header_key='Authorization'): void {
+function auth_this_http_request(): void {
     $headers = getallheaders();
+
+    $auth_header_key = IAuthManager::shared()->getAuthHeader();
 
     if (is_array($headers)) {
         $auth_key = isset($headers[$auth_header_key]) ? $headers[$auth_header_key] : null;
