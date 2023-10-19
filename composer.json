@@ -1,0 +1,15 @@
+{
+    "name": "auftraggeber/php-mail-interface",
+    "description": "PHP-Interface to send mails from http requests.",
+    "type": "library",
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonas Eddy Langner",
+            "email": "Jonas.Langner23@gmail.com"
+        }
+    ]
+}
