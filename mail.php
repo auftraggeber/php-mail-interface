@@ -21,10 +21,8 @@ if (file_exists("setup") && is_dir("setup")) {
 
 auth_this_http_request();
 
+require_once 'vendor/autoload.php';
 require_once 'fetch_data.php';
-require_once 'phpmailer/PHPMailer.php';
-require_once 'phpmailer/Exception.php';
-require_once 'phpmailer/SMTP.php';
 require_once 'cache.php';
 require_once 'settings.php';
 
