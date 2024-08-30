@@ -33,3 +33,8 @@ SMTP only (for now).
 - param chunk is the chunk-identifier
 - param cache_id is the cache-identifier. this var will be created after the first chunk was stored. this will be part of the response. you will have to pass this param with furter chunks
 - to load a cached body into the mail you have to pass the cache_id when sending. the cache will be overwritten if you pass the "body" param
+
+## settings and auth manager
+
+- examples for settings and auth manager are located in examples/
+- move them into setup/ to initialize them

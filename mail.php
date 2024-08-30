@@ -24,7 +24,6 @@ auth_this_http_request();
 require_once 'vendor/autoload.php';
 require_once 'fetch_data.php';
 require_once 'cache.php';
-require_once 'settings.php';
 
 $_POST = DefaultSettings::applyOn($_POST);
 
