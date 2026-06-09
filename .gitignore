@@ -3,3 +3,6 @@ cache/
 cred_settings.php
 setup/
 /vendor/
+composer.lock
+.idea
+docker/.env

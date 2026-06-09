@@ -1,0 +1,7 @@
+.*
+vendor
+example
+composer.lock
+LICENSE
+PHPMAILER_LICENSE
+README.md
