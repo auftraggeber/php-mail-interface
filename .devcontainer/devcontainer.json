@@ -1,0 +1,16 @@
+{
+  "name": "PHP Mail Interface",
+  "image": "mcr.microsoft.com/devcontainers/php",
+  "customizations" : {
+    "jetbrains" : {
+      "backend" : "PhpStorm",
+      "plugins": [
+        "com.github.lppedd.idea-conventional-commit"
+      ]
+    }
+  },
+  "shutdownAction": "stopContainer",
+  "runArgs": [
+    "--add-host=host.docker.internal:host-gateway"
+  ]
+}

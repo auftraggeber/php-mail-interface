@@ -1,0 +1,17 @@
+services:
+  php-mail-interface:
+    container_name: php-mail-interface
+    hostname: mail
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8085:80"
+    environment:
+      SMTP_HOST: ${SMTP_HOST:-localhost}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME}
+      SMTP_PASSWORD: ${SMTP_PASSWORD}
+      SMTP_ENCRYPTION: ${SMTP_ENCRYPTION:-tls}
+      SMTP_AUTH: ${SMTP_AUTH:-1}
+      MAIL_AUTH_KEY: ${MAIL_AUTH_KEY}

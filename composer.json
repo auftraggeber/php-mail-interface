@@ -3,7 +3,8 @@
     "description": "PHP-Interface to send mails from http requests.",
     "type": "library",
     "require": {
-        "phpmailer/phpmailer": "^6.8"
+        "phpmailer/phpmailer": "^6.8",
+        "ext-json": "*"
     },
     "license": "LGPL-2.1",
     "authors": [
@@ -11,5 +12,10 @@
             "name": "Jonas Eddy Langner",
             "email": "Jonas.Langner23@gmail.com"
         }
-    ]
+    ],
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
+    }
 }
